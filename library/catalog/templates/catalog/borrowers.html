@@ -1,0 +1,17 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>Borrowers</h1>
+
+    {% if bookinstance_list %}
+        <ul>
+            {% for instance in bookinstance_list %}
+                <li>
+                   <p>{{ instance.borrower.username }}</p> 
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no borrowers.</p>
+    {% endif %}
+{% endblock %}
